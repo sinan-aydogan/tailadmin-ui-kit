@@ -1,7 +1,7 @@
 {
   "name": "tailadmin-ui-kit",
   "author": "Sinan AYDOĞAN",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "description": "VueJS UI Kit for Admin Panels",
   "license": "MIT",
   "main": "dist/tailadmin-ui-kit.ssr.js",
@@ -69,7 +69,9 @@
     "@vue/compiler-sfc": "^3.0.11",
     "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
+    "or": "^0.2.0",
     "postcss": "^8.2.10",
+    "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.8",
     "rollup-plugin-postcss": "^4.0.0",
@@ -86,6 +88,7 @@
     "node": ">=12"
   },
   "dependencies": {
-    "@rollup/plugin-json": "^4.1.0"
+    "@rollup/plugin-json": "^4.1.0",
+    "lodash": "^4.17.21"
   }
 }

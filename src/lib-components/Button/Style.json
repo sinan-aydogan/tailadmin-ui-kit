@@ -124,13 +124,5 @@
     "fuchsia" : "hover:bg-fuchsia-500 active:text-fuchsia-700",
     "pink" : "hover:bg-pink-500 active:text-pink-700",
     "rose" : "hover:bg-rose-500 active:text-rose-700"
-  },
-  "radius": {
-    "sm": "rounded-sm",
-    "md": "rounded-md",
-    "lg": "rounded-lg",
-    "xl": "rounded-xl",
-    "2xl": "rounded-2xl",
-    "full": "rounded-full"
   }
 }

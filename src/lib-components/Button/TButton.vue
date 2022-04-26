@@ -8,7 +8,7 @@
           TStyle.base,
           TStyle[design].base,
           TStyle[design][color],
-          TStyle.radius[radius],
+          GlobalStyles.radius[radius],
           {'border': border || design==='outline'},
           {'border-0' : design.includes('link')},
           {'opacity-75 pointer-events-none' : loading || disabled},
@@ -47,6 +47,7 @@
 <script>
 import {toRefs, reactive, computed, shallowRef} from 'vue';
 import {default as Style} from "./Style.json"
+import GlobalStyles from "../GlobalStyles.json"
 import TCircleLoadingAnimation from "../LoadingAnimation/TCircleLoadingAnimation";
 
 export default {
@@ -137,7 +138,7 @@ export default {
     }
 
     /*Return*/
-    return {TStyle, loadingComponent};
+    return {TStyle, GlobalStyles, loadingComponent};
   }
 }
 </script>

@@ -7,6 +7,8 @@ Use the package manager [npm](https://pip.pypa.io/en/stable/) to install TailAdm
 
 ## Usage
 
+Please follow my [YouTube channel](https://www.youtube.com/playlist?list=PLbdS49WKsrOXTo_X_Ja6P3zll1yyhoIYN) for usages.
+
 ```javascript
 // Import a component if you want to use in script block
 npm install tailadmin-ui-kit
@@ -30,6 +32,8 @@ export default defineComponent({
 
 ## :rocket: Components
 - [Button](#Button)
+- [Input Group](#InputGroup)
+- [Text Input](#TextInput)
  
 
 >:telescope: Other components coming soon, please check [Github](https://github.com/sinan-aydogan/tailadmin-ui-kit)
