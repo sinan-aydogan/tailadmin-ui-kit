@@ -1,13 +1,17 @@
 <template>
-  <svg stroke="currentColor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50%" cy="50%" r="45"/>
+  <svg
+    stroke="currentColor"
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="50%" cy="50%" r="45" />
   </svg>
 </template>
 
 <script>
 export default {
-  name: "TCircleLoadingAnimation"
-}
+  name: "TCircleLoadingAnimation",
+};
 </script>
 
 <style scoped>
@@ -20,7 +24,7 @@ svg {
     transform: rotateZ(0deg);
   }
   100% {
-    transform: rotateZ(360deg)
+    transform: rotateZ(360deg);
   }
 }
 

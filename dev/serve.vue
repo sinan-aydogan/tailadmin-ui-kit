@@ -1,19 +1,18 @@
 <script>
 import { defineComponent, ref } from "vue";
-import TInputGroup from "@/lib-components/Input/TInputGroup";
-
 import "@/index.css";
-import TTextInput from "@/lib-components/Input/TTextInput";
+import TSwitchInput from "@/lib-components/Input/TSwitchInput";
+import TInputGroup from "@/lib-components/Input/TInputGroup";
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { TailadminUiKitSample } from '@/entry.esm';
 
 export default defineComponent({
   name: "ServeDev",
-  components: { TTextInput, TInputGroup },
+  components: { TInputGroup, TSwitchInput },
 
   setup() {
     const form = ref({
-      name: "",
+      status: [],
     });
 
     return { form };
@@ -30,6 +29,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
 }
+
 @media (prefers-color-scheme: dark) {
   .container {
     background-color: rgb(31 41 55);
@@ -40,17 +40,22 @@ export default defineComponent({
 <template>
   <div id="app">
     <div class="container">
-      <t-input-group sub-label="New" sub-label-color="emerald">
-        <t-text-input v-model="form.name" clear-button radius="sm">
-          <template #prepend>
-            <b style="color: red">Monthly</b>
-          </template>
-        </t-text-input>
+      <div>
+        <t-input-group label="Write permission">
+          <t-switch-input
+            id="write"
+            v-model="form.status"
+            true-color="emerald"
+            false-color="amber"
+            multi
+            loading
+          >
+            <template #true> Yes, It can </template>
 
-        <template #label>
-          <i style="back">Sallary</i>
-        </template>
-      </t-input-group>
+            <template #false> No, It can not </template>
+          </t-switch-input>
+        </t-input-group>
+      </div>
     </div>
   </div>
 </template>
