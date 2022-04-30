@@ -45,7 +45,7 @@ import "tailadmin-ui-kit/src/index.css"
 
 ```javascript
 // Import a component if you want to use in script block
-import TSwitchInput from "tailadmin-ui-kit"
+import { TSwitchInput } from "tailadmin-ui-kit"
 import {defineComponent} from 'vue';
 
 export default defineComponent({
@@ -73,10 +73,12 @@ export default defineComponent({
 ## :rocket: Components
 
 - [Button](https://youtu.be/A42a0Tcls5s)
-- [Input Group](https://youtu.be/EanH8XQNMU8)
-- [Text Input](https://youtu.be/EanH8XQNMU8)
-- [Text Area Input](https://youtu.be/cCQSoqIfJMM)
-- [Switch Input](https://youtu.be/a5RpQl2cnEs)
+- Form & Input Components
+  - [Input Group](https://youtu.be/EanH8XQNMU8)
+  - [Text Input](https://youtu.be/EanH8XQNMU8)
+  - [Text Area Input](https://youtu.be/cCQSoqIfJMM)
+  - [Switch Input](https://youtu.be/a5RpQl2cnEs)
+  - [Select Input](https://youtu.be/nJ4bQjdvxPM) 🚀
 
 > :telescope: Other components coming soon, please check [Github](https://github.com/sinan-aydogan/tailadmin-ui-kit)
 
