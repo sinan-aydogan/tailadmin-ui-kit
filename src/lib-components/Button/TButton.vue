@@ -1,53 +1,71 @@
 <template>
   <!--Button-->
   <button
-      :type="type"
-      :disabled="disabled"
-      :read-only="loading"
-      :class="[
-          TStyle.base,
-          TStyle[design].base,
-          TStyle[design][color],
-          GlobalStyles.radius[radius],
-          {'border': border || design==='outline'},
-          {'border-0' : design.includes('link')},
-          {'opacity-75 pointer-events-none' : loading || disabled},
-          [$slots.default ? 'px-4' : 'px-2'],
-          {'active:scale-90' : animation},
-          [iconPosition === 'right' ? 'flex-row-reverse' : 'flex-row'],
-          {'w-full justify-center' : block}
-          ]"
+    :type="type"
+    :disabled="disabled"
+    :read-only="loading"
+    :class="[
+      TStyle.base,
+      TStyle[design].base,
+      TStyle[design][color],
+      GlobalStyles.radius[radius],
+      { border: border || design === 'outline' },
+      { 'border-0': design.includes('link') },
+      { 'opacity-75 pointer-events-none': loading || disabled },
+      [$slots.default ? 'px-4' : 'px-2'],
+      { 'active:scale-90': animation },
+      [iconPosition === 'right' ? 'flex-row-reverse' : 'flex-row'],
+      { 'w-full justify-center': block },
+    ]"
   >
-   <div class="flex flex-grow-0 flex-shrink-0">
-     <!--Loading Animation-->
-     <component
-         :is="loadingComponent"
-         v-if="loading"
-         class="w-5 h-5"
-         :class="$slots.default ? (iconPosition === 'right' ? 'ml-2' : '-ml-2 mr-2') : null"
-     />
+    <div class="flex flex-grow-0 flex-shrink-0">
+      <!--Loading Animation-->
+      <component
+        :is="loadingComponent"
+        v-if="loading"
+        class="w-5 h-5"
+        :class="
+          $slots.default
+            ? iconPosition === 'right'
+              ? 'ml-2'
+              : '-ml-2 mr-2'
+            : null
+        "
+      />
 
-     <!--Icon-->
-     <span v-if="$slots.icon && !loading" :class="$slots.default ? (iconPosition === 'right' ? 'pl-2' : 'pr-2') : null">
-      <slot name="icon"></slot>
-    </span>
-   </div>
+      <!--Icon-->
+      <span
+        v-if="$slots.icon && !loading"
+        :class="
+          $slots.default ? (iconPosition === 'right' ? 'pl-2' : 'pr-2') : null
+        "
+      >
+        <slot name="icon"></slot>
+      </span>
+    </div>
 
     <!--Content-->
-    <div v-if="$slots.default || title">
+    <div
+      v-if="$slots.default || title"
+      :class="[
+        { 'text-2xl': size === '2xl' },
+        { 'text-xl': size === 'xl' },
+        { 'text-lg': size === 'lg' },
+        { 'text-md': size === 'md' },
+        { 'text-xs': size === 'sm' },
+      ]"
+    >
       <span v-if="title" v-text="title"></span>
       <slot v-else></slot>
     </div>
-
-
   </button>
   <!--Custom-->
 </template>
 
 <script>
-import {toRefs, reactive, computed, shallowRef} from 'vue';
-import {default as Style} from "./Style.json"
-import GlobalStyles from "../GlobalStyles.json"
+import { toRefs, reactive, computed, shallowRef } from "vue";
+import { default as Style } from "./Style.json";
+import GlobalStyles from "../GlobalStyles.json";
 import TCircleLoadingAnimation from "../LoadingAnimation/TCircleLoadingAnimation";
 
 export default {
@@ -56,76 +74,70 @@ export default {
   props: {
     title: {
       type: String,
-      default: '',
+      default: "",
     },
     size: {
       type: String,
-      default: "md"
+      default: "md",
     },
     design: {
       type: String,
-      default: "filled"
+      default: "filled",
     },
     color: {
       type: String,
-      default: "blue"
+      default: "blue",
     },
     radius: {
       type: String,
-      default: 'md'
+      default: "md",
     },
     link: {
       type: String,
-      default: ""
+      default: "",
     },
     border: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loading: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loadingDesign: {
       type: String,
-      default: "three-bars"
-    },
-    loadingWithContent: {
-      type: Boolean,
-      default: false
+      default: "three-bars",
     },
     type: {
       type: String,
-      default: "submit"
+      default: "submit",
     },
     animation: {
       type: Boolean,
-      default: true
+      default: true,
     },
     iconPosition: {
       type: String,
-      default: "left"
+      default: "left",
     },
     block: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   components: {
-    TCircleLoadingAnimation
+    TCircleLoadingAnimation,
   },
 
   setup(props) {
     const TStyle = Style;
     /*Definitions*/
-    const {
-      loadingDesign
-    } = toRefs(props);
+    const { loadingDesign } = toRefs(props);
 
     /*Loading Component*/
     const loadingComponent = shallowRef();
@@ -138,14 +150,13 @@ export default {
     }
 
     /*Return*/
-    return {TStyle, GlobalStyles, loadingComponent};
-  }
-}
+    return { TStyle, GlobalStyles, loadingComponent };
+  },
+};
 </script>
 
 <style scoped>
 .btn {
-  @apply bg-red-500
+  @apply bg-red-500;
 }
-
 </style>
