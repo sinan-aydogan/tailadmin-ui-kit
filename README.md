@@ -72,10 +72,11 @@ export default defineComponent({
 
 ## :rocket: Components
 
-- [Button](#Button)
-- [Input Group](#InputGroup)
-- [Text Input](#TextInput)
-- [Switch Input](#SwitchInput)
+- [Button](https://youtu.be/A42a0Tcls5s)
+- [Input Group](https://youtu.be/EanH8XQNMU8)
+- [Text Input](https://youtu.be/EanH8XQNMU8)
+- [Text Area Input](https://youtu.be/cCQSoqIfJMM)
+- [Switch Input](https://youtu.be/a5RpQl2cnEs)
 
 > :telescope: Other components coming soon, please check [Github](https://github.com/sinan-aydogan/tailadmin-ui-kit)
 

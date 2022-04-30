@@ -1,18 +1,18 @@
 <script>
 import { defineComponent, ref } from "vue";
 import "@/index.css";
-import TSwitchInput from "@/lib-components/Input/TSwitchInput";
 import TInputGroup from "@/lib-components/Input/TInputGroup";
+import TButton from "@/lib-components/Button/TButton";
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { TailadminUiKitSample } from '@/entry.esm';
 
 export default defineComponent({
   name: "ServeDev",
-  components: { TInputGroup, TSwitchInput },
+  components: { TButton, TInputGroup },
 
   setup() {
     const form = ref({
-      status: [],
+      status: "",
     });
 
     return { form };
@@ -39,23 +39,8 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <div class="container">
-      <div>
-        <t-input-group label="Write permission">
-          <t-switch-input
-            id="write"
-            v-model="form.status"
-            true-color="emerald"
-            false-color="amber"
-            multi
-            loading
-          >
-            <template #true> Yes, It can </template>
-
-            <template #false> No, It can not </template>
-          </t-switch-input>
-        </t-input-group>
-      </div>
+    <div class="container relative">
+      <div style="width: fit-content" class="inline-flex space-x-2"></div>
     </div>
   </div>
 </template>
