@@ -26,11 +26,11 @@
       "rose" : "text-rose-600"
     },
     "messageColors": {
-      "error": "text-red-600",
-      "warning": "text-yellow-600",
-      "success": "text-green-600",
-      "info": "text-blue-600",
-      "default": "text-slate-600 dark:text-slate-200"
+      "error": "text-red-600 border-red-500",
+      "warning": "text-yellow-600 border-yellow-500",
+      "success": "text-green-600 border-green-500",
+      "info": "text-blue-600 border-blue-500",
+      "default": "text-slate-600 dark:text-slate-200 border-slate-500"
     }
   },
   "textInput": {
