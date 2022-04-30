@@ -1,14 +1,14 @@
 <template>
   <div
     @click="input.focus()"
-    class="relative flex flex-grow-0 border border-slate-300 bg-white dark:bg-slate-700 dark:border-transparent dark:bg-slate-900/30 border-slate-300 dark:border-slate-600 overflow-hidden"
+    class="relative flex flex-grow-0 border bg-white dark:bg-slate-700 dark:bg-slate-900/30 outline-none"
     :class="[
       GlobalStyles.radius[radius],
-      {
-        'focus:ring-rose-500 border-rose-500 focus:border-rose-500':
-          messageType,
-      },
-      { 'focus:ring-indigo-500 focus:border-indigo-500': !messageType },
+      { '': !messageType },
+      messageType
+        ? Style.inputGroup.messageColors[messageType]
+        : 'border-slate-300 dark:border-slate-600 focus:ring-indigo-500 focus:border-indigo-500',
+      { 'opacity-50 cursor-not-allowed': disabled },
     ]"
   >
     <!--Prepend-->
@@ -31,18 +31,20 @@
         :name="id"
         :disabled="disabled"
         :readonly="readOnly"
+        :placeholder="placeholder"
         @input="$emit('update:modelValue', $event.target.value)"
         class="h-10 flex flex-grow-0 z-0 my-1 px-2 w-full text-slate-700 dark:text-slate-200 bg-transparent outline-none focus:ring-2"
+        :class="{ 'cursor-not-allowed': disabled }"
         ref="input"
       />
       <!--Clear Button-->
       <div
-        class="absolute z-10 right-2 top-[.85rem] bg-slate-200 hover:bg-slate-200 dark:bg-slate-700 rounded-full dark:hover:bg-rose-600"
+        class="absolute z-10 right-2 top-[1.15rem] bg-slate-200 hover:bg-slate-200 dark:bg-slate-700 rounded-full dark:hover:bg-rose-600"
       >
         <CircleXMark
           v-if="modelValue && clearButton"
           @click="$emit('update:modelValue', '')"
-          class="w-5 h-5 text-slate-600 hover:text-rose-600 dark:text-slate-200 cursor-pointer"
+          class="w-5 h-5 text-slate-600 hover:text-rose-600 dark:text-slate-200 hover:dark:text-slate-200 cursor-pointer -m-1"
         />
       </div>
     </div>
