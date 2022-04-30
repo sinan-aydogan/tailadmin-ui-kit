@@ -1,17 +1,19 @@
 <template>
   <div class="relative" :class="{ 'opacity-50 cursor-not-allowed': disabled }">
     <!--Clear Button-->
-    <div
-      v-if="modelValue && clearButton && !disabled"
-      class="absolute z-10 -top-1 -right-1 bg-slate-200 hover:bg-slate-200 dark:bg-slate-700 rounded-full dark:hover:bg-rose-600"
-    >
-      <CircleXMark
-        @click="
+
+
+    <div v-if="modelValue && clearButton && !disabled"
+         class="absolute -top-1 -right-1 flex z-10 justify-center items-center">
+      <div class="bg-slate-200 hover:bg-slate-200 dark:bg-slate-700 rounded-full dark:hover:bg-rose-600">
+        <CircleXMark
+          @click="
           $emit('update:modelValue', '');
           textLength = 0;
         "
-        class="w-5 h-5 text-slate-600 hover:text-rose-600 dark:text-slate-200 hover:dark:text-slate-200 cursor-pointer -m-1"
-      />
+          class="w-5 h-5 text-slate-600 hover:text-rose-600 dark:text-slate-200 hover:dark:text-slate-200 cursor-pointer -m-1"
+        />
+      </div>
     </div>
 
     <!--Icons-->
@@ -27,12 +29,12 @@
     <!--Input-->
     <textarea
       :class="[
-        'border whitespace-normal min-h-[3.565rem] bg-white dark:bg-slate-700 dark:bg-slate-900/30 dark:text-slate-200 p-4 h-auto w-full outline-none focus:ring-2',
+        'border whitespace-normal min-h-[3.565rem] bg-white dark:bg-slate-800/50 dark:text-slate-200 p-4 h-auto w-full outline-none focus:ring-2',
         GlobalStyles.radius[radius],
         { 'cursor-not-allowed': disabled || readOnly },
         messageType
-          ? Style.inputGroup.messageColors[messageType]
-          : 'border-slate-300 dark:border-slate-600 focus:ring-indigo-500 focus:border-indigo-500',
+          ? Style.inputGroup.messageColors[messageType] + ' focus:border-none'
+          : 'border-slate-300 dark:border-slate-600 focus:ring-indigo-500',
       ]"
       :rows="rows"
       :id="id"
@@ -64,36 +66,36 @@ export default {
   components: { CircleExclamationIcon, CircleXMark },
   props: {
     modelValue: {
-      type: String,
+      type: String
     },
     id: {
-      type: String,
+      type: String
     },
     rows: {
       type: Number,
-      default: 3,
+      default: 3
     },
     placeholder: {
-      type: String,
+      type: String
     },
     clearButton: {
       type: Boolean,
-      default: false,
+      default: false
     },
     counter: {
       type: Boolean,
-      default: false,
+      default: false
     },
     disabled: {
-      default: false,
+      default: false
     },
     readOnly: {
-      default: false,
+      default: false
     },
     radius: {
       type: String,
-      default: "md",
-    },
+      default: "md"
+    }
   },
   setup(props) {
     /*Definitions*/
@@ -108,6 +110,6 @@ export default {
     /*Get Error Status*/
     const messageType = inject("messageType");
     return { GlobalStyles, Style, messageType, textLength };
-  },
+  }
 };
 </script>
