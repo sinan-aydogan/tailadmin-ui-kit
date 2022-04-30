@@ -101,7 +101,7 @@
     "rose" : "hover:text-rose-500 active:text-rose-700"
   },
   "link-plus" : {
-    "base": "text-slate-700 hover:text-white hover:underline active:bg-transparent dark:bg-slate-400 disabled:text-slate-600",
+    "base": "text-slate-700 dark:text-slate-200 hover:text-white hover:underline active:bg-transparent disabled:text-slate-600",
     "slate" : "hover:bg-slate-500 active:text-slate-700",
     "gray" : "hover:bg-gray-500 active:text-gray-700",
     "zinc" : "hover:bg-zinc-500 active:text-zinc-700",
