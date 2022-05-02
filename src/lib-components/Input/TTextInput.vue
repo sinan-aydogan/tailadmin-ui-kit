@@ -37,10 +37,15 @@
         :class="{ 'cursor-not-allowed': disabled }"
         ref="input"
       />
+
       <!--Clear Button-->
-      <div v-if="modelValue && clearButton"
-           class="absolute flex z-10 h-full right-2 justify-center items-center">
-        <div class="bg-slate-200 hover:bg-slate-200 dark:bg-slate-700 rounded-full dark:hover:bg-rose-600">
+      <div
+        v-if="modelValue && clearButton"
+        class="absolute flex z-10 h-full right-2 justify-center items-center"
+      >
+        <div
+          class="bg-slate-200 hover:bg-slate-200 dark:bg-slate-700 rounded-full dark:hover:bg-rose-600"
+        >
           <CircleXMark
             @click="$emit('update:modelValue', '')"
             class="w-5 h-5 text-slate-600 hover:text-rose-600 dark:text-slate-200 hover:dark:text-slate-200 cursor-pointer -m-1"
@@ -58,9 +63,11 @@
         <span v-if="append" v-text="append"></span>
         <slot v-else name="append"></slot>
         <!--Icons-->
-        <div v-if="messageType" class="flex h-full justify-center items-center" :class="[
-          {'ml-2' : append || $slots.append},
-        ]">
+        <div
+          v-if="messageType"
+          class="flex h-full justify-center items-center"
+          :class="[{ 'ml-2': append || $slots.append }]"
+        >
           <!--Message Info-->
           <circle-exclamation-icon
             class="w-5 h-5"
@@ -85,72 +92,72 @@ export default {
   props: {
     modelValue: {
       type: [String, Date, Number],
-      default: ""
+      default: "",
     },
     selectValue: {
       type: [String, Date, Number, Object, Array],
-      default: null
+      default: null,
     },
     id: {
       type: String,
       default() {
         return "text-input-" + Number(new Date());
-      }
+      },
     },
     type: {
       type: String,
-      default: "text"
+      default: "text",
     },
     placeholder: {
       type: String,
-      default: null
+      default: null,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     readOnly: {
       type: Boolean,
-      default: false
+      default: false,
     },
     clearButton: {
       type: Boolean,
-      default: false
+      default: false,
     },
     radius: {
       type: String,
-      default: "md"
+      default: "md",
     },
     prepend: {
       type: String,
-      default: ""
+      default: "",
     },
     append: {
       type: String,
-      default: ""
+      default: "",
     },
     select: {
       type: Boolean,
-      default: false
+      default: false,
     },
     selectOptions: {
       type: [Object, Array],
       default() {
         return [{ key: "", label: "Please add a options source" }];
-      }
+      },
     },
     selectLabelKey: {
       type: String,
-      default: "label"
+      default: "label",
     },
     selectValueKey: {
       type: String,
-      default: "key"
+      default: "key",
     },
     selectType: {
       type: String,
-      default: "outside"
-    }
+      default: "outside",
+    },
   },
 
   emits: ["update:modelValue", "update:selectValue"],
@@ -164,9 +171,9 @@ export default {
       GlobalStyles,
       Style,
       messageType,
-      input
+      input,
     };
-  }
+  },
 };
 </script>
 

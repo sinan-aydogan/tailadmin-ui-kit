@@ -1,0 +1,570 @@
+{
+  "filled": {
+    "base": "text-white py-1 px-4",
+    "slate": {
+      "container": "bg-slate-500",
+      "cdLine": "bg-slate-700"
+    },
+    "gray": {
+      "container":  "bg-gray-500",
+      "cdLine": "bg-gray-700"
+    },
+    "zinc": {
+      "container":  "bg-zinc-500",
+      "cdLine": "bg-zinc-700"
+    },
+    "neutral": {
+      "container":  "bg-neutral-500",
+      "cdLine": "bg-neutral-700"
+    },
+    "stone": {
+      "container":  "bg-stone-500",
+      "cdLine": "bg-stone-700"
+    },
+    "red": {
+      "container":  "bg-red-500",
+      "cdLine": "bg-red-700"
+    },
+    "orange": {
+      "container":  "bg-orange-500",
+      "cdLine": "bg-orange-700"
+    },
+    "amber": {
+      "container":  "bg-amber-500",
+      "cdLine": "bg-amber-700"
+    },
+    "yellow": {
+      "container":  "bg-yellow-500",
+      "cdLine": "bg-yellow-700"
+    },
+    "lime": {
+      "container":  "bg-lime-500",
+      "cdLine": "bg-lime-700"
+    },
+    "green": {
+      "container":  "bg-green-500",
+      "cdLine": "bg-green-700"
+    },
+    "emerald": {
+      "container":  "bg-emerald-500",
+      "cdLine": "bg-emerald-700"
+    },
+    "teal": {
+      "container":  "bg-teal-500",
+      "cdLine": "bg-teal-700"
+    },
+    "cyan": {
+      "container":  "bg-cyan-500",
+      "cdLine": "bg-cyan-700"
+    },
+    "sky": {
+      "container":  "bg-sky-500",
+      "cdLine": "bg-sky-700"
+    },
+    "blue": {
+      "container":  "bg-blue-500",
+      "cdLine": "bg-blue-700"
+    },
+    "indigo": {
+      "container":  "bg-indigo-500",
+      "cdLine": "bg-indigo-700"
+    },
+    "violet": {
+      "container":  "bg-violet-500",
+      "cdLine": "bg-violet-700"
+    },
+    "purple": {
+      "container":  "bg-purple-500",
+      "cdLine": "bg-purple-700"
+    },
+    "fuchsia": {
+      "container":  "bg-fuchsia-500",
+      "cdLine": "bg-fuchsia-700"
+    },
+    "pink": {
+      "container":  "bg-pink-500",
+      "cdLine": "bg-pink-700"
+    },
+    "rose": {
+      "container":  "bg-rose-500",
+      "cdLine": "bg-rose-700"
+    }
+  },
+  "light": {
+    "base": "border py-1 px-4",
+    "slate": {
+      "container": "bg-slate-50 border-slate-500 text-slate-600 dark:bg-slate-700/10 dark:text-slate-100",
+      "cdLine":  "bg-slate-500"
+    },
+    "gray": {
+      "container" : "bg-gray-50 border-gray-500 text-gray-600 dark:bg-gray-700/10 dark:text-gray-100",
+      "cdLine":  "bg-gray-500"
+    },
+    "zinc": {
+      "container" : "bg-zinc-50 border-zinc-500 text-zinc-600 dark:bg-zinc-700/10 dark:text-zinc-100",
+      "cdLine":  "bg-zinc-500"
+    },
+    "neutral": {
+      "container" : "bg-neutral-50 border-neutral-500 text-neutral-600 dark:bg-neutral-700/10 dark:text-neutral-100",
+      "cdLine":  "bg-neutral-500"
+    },
+    "stone": {
+      "container" : "bg-stone-50 border-stone-500 text-stone-600 dark:bg-stone-700/10 dark:text-stone-100",
+      "cdLine":  "bg-stone-500"
+    },
+    "red": {
+      "container" : "bg-red-50 border-red-500 text-red-600 dark:bg-red-700/10 dark:text-red-100",
+      "cdLine":  "bg-red-500"
+    },
+    "orange": {
+      "container" : "bg-orange-50 border-orange-500 text-orange-600 dark:bg-orange-700/10 dark:text-orange-100",
+      "cdLine":  "bg-orange-500"
+    },
+    "amber": {
+      "container" : "bg-amber-50 border-amber-500 text-amber-600 dark:bg-amber-700/10 dark:text-amber-100",
+      "cdLine":  "bg-amber-500"
+    },
+    "yellow": {
+      "container" : "bg-yellow-50 border-yellow-500 text-yellow-600 dark:bg-yellow-700/10 dark:text-yellow-100",
+      "cdLine":  "bg-yellow-500"
+    },
+    "lime": {
+      "container" : "bg-lime-50 border-lime-500 text-lime-600 dark:bg-lime-700/10 dark:text-lime-100",
+      "cdLine":  "bg-lime-500"
+    },
+    "green": {
+      "container" : "bg-green-50 border-green-500 text-green-600 dark:bg-green-700/10 dark:text-green-100",
+      "cdLine":  "bg-green-500"
+    },
+    "emerald": {
+      "container" : "bg-emerald-50 border-emerald-500 text-emerald-600 dark:bg-emerald-700/10 dark:text-emerald-100",
+      "cdLine":  "bg-emerald-500"
+    },
+    "teal": {
+      "container" : "bg-teal-50 border-teal-500 text-teal-600 dark:bg-teal-700/10 dark:text-teal-100",
+      "cdLine":  "bg-teal-500"
+    },
+    "cyan": {
+      "container" : "bg-cyan-50 border-cyan-500 text-cyan-600 dark:bg-cyan-700/10 dark:text-cyan-100",
+      "cdLine":  "bg-cyan-500"
+    },
+    "sky": {
+      "container" : "bg-sky-50 border-sky-500 text-sky-600 dark:bg-sky-700/10 dark:text-sky-100",
+      "cdLine":  "bg-sky-500"
+    },
+    "blue": {
+      "container" : "bg-blue-50 border-blue-500 text-blue-600 dark:bg-blue-700/10 dark:text-blue-100",
+      "cdLine":  "bg-blue-500"
+    },
+    "indigo": {
+      "container" : "bg-indigo-50 border-indigo-500 text-indigo-600 dark:bg-indigo-700/10 dark:text-indigo-100",
+      "cdLine":  "bg-indigo-500"
+    },
+    "violet": {
+      "container" : "bg-violet-50 border-violet-500 text-violet-600 dark:bg-violet-700/10 dark:text-violet-100",
+      "cdLine":  "bg-violet-500"
+    },
+    "purple": {
+      "container" : "bg-purple-50 border-purple-500 text-purple-600 dark:bg-purple-700/10 dark:text-purple-100",
+      "cdLine":  "bg-purple-500"
+    },
+    "fuchsia": {
+      "container" : "bg-fuchsia-50 border-fuchsia-500 text-fuchsia-600 dark:bg-fuchsia-700/10 dark:text-fuchsia-100",
+      "cdLine":  "bg-fuchsia-500"
+    },
+    "pink": {
+      "container" : "bg-pink-50 border-pink-500 text-pink-600 dark:bg-pink-700/10 dark:text-pink-100",
+      "cdLine":  "bg-pink-500"
+    },
+    "rose": {
+      "container" : "bg-rose-50 border-rose-500 text-rose-600 dark:bg-rose-700/10 dark:text-rose-100",
+      "cdLine":  "bg-rose-500"
+    }
+  },
+  "inline": {
+    "base": "border py-1 pl-6 pr-4 text-white",
+    "slate": {
+      "container": "bg-slate-500 border-slate-500 dark:bg-opacity-30",
+      "cdLine": "bg-slate-50"
+    },
+    "gray": {
+      "container":  "bg-gray-500 border-gray-500 dark:bg-opacity-30",
+      "cdLine": "bg-gray-50"
+    },
+    "zinc": {
+      "container":  "bg-zinc-500 border-zinc-500 dark:bg-opacity-30",
+      "cdLine": "bg-zinc-50"
+    },
+    "neutral": {
+      "container":  "bg-neutral-500 border-neutral-500 dark:bg-opacity-30",
+      "cdLine": "bg-neutral-50"
+    },
+    "stone": {
+      "container":  "bg-stone-500 border-stone-500 dark:bg-opacity-30",
+      "cdLine": "bg-stone-50"
+    },
+    "red": {
+      "container":  "bg-red-500 border-red-500 dark:bg-opacity-30",
+      "cdLine": "bg-red-50"
+    },
+    "orange": {
+      "container":  "bg-orange-500 border-orange-500 dark:bg-opacity-30",
+      "cdLine": "bg-orange-50"
+    },
+    "amber": {
+      "container":  "bg-amber-500 border-amber-500 dark:bg-opacity-30",
+      "cdLine": "bg-amber-50"
+    },
+    "yellow": {
+      "container":  "bg-yellow-500 border-yellow-500 dark:bg-opacity-30",
+      "cdLine": "bg-yellow-50"
+    },
+    "lime": {
+      "container":  "bg-lime-500 border-lime-500 dark:bg-opacity-30",
+      "cdLine": "bg-lime-50"
+    },
+    "green": {
+      "container":  "bg-green-500 border-green-500 dark:bg-opacity-30",
+      "cdLine": "bg-green-50"
+    },
+    "emerald": {
+      "container":  "bg-emerald-500 border-emerald-500 dark:bg-opacity-30",
+      "cdLine": "bg-emerald-50"
+    },
+    "teal": {
+      "container":  "bg-teal-500 border-teal-500 dark:bg-opacity-30",
+      "cdLine": "bg-teal-50"
+    },
+    "cyan": {
+      "container":  "bg-cyan-500 border-cyan-500 dark:bg-opacity-30",
+      "cdLine": "bg-cyan-50"
+    },
+    "sky": {
+      "container":  "bg-sky-500 border-sky-500 dark:bg-opacity-30",
+      "cdLine": "bg-sky-50"
+    },
+    "blue": {
+      "container":  "bg-blue-500 border-blue-500 dark:bg-opacity-30",
+      "cdLine": "bg-blue-50"
+    },
+    "indigo": {
+      "container":  "bg-indigo-500 border-indigo-500 dark:bg-opacity-30",
+      "cdLine": "bg-indigo-50"
+    },
+    "violet": {
+      "container":  "bg-violet-500 border-violet-500 dark:bg-opacity-30",
+      "cdLine": "bg-violet-50"
+    },
+    "purple": {
+      "container":  "bg-purple-500 border-purple-500 dark:bg-opacity-30",
+      "cdLine": "bg-purple-50"
+    },
+    "fuchsia": {
+      "container":  "bg-fuchsia-500 border-fuchsia-500 dark:bg-opacity-30",
+      "cdLine": "bg-fuchsia-50"
+    },
+    "pink": {
+      "container":  "bg-pink-500 border-pink-500 dark:bg-opacity-30",
+      "cdLine": "bg-pink-50"
+    },
+    "rose": {
+      "container":  "bg-rose-500 border-rose-500 dark:bg-opacity-30",
+      "cdLine": "bg-rose-50"
+    }
+  },
+  "outline": {
+    "base": "flex shadow px-4 text-slate-700 bg-white dark:bg-slate-700/10 dark:text-white overflow-hidden",
+    "slate": {
+      "container": "text-slate-500",
+      "cdLine":"bg-slate-500",
+      "icon": "text-slate-500"
+    },
+    "gray": {
+      "container": "text-gray-500",
+      "cdLine": "bg-gray-500",
+      "icon": "text-gray-500"
+    },
+    "zinc": {
+      "container": "text-zinc-500",
+      "cdLine": "bg-zinc-500",
+      "icon": "text-zinc-500"
+    },
+    "neutral": {
+      "container": "text-neutral-500",
+      "cdLine": "bg-neutral-500",
+      "icon": "text-neutral-500"
+    },
+    "stone": {
+      "container": "text-stone-500",
+      "cdLine": "bg-stone-500",
+      "icon": "text-stone-500"
+    },
+    "red": {
+      "container": "text-red-500",
+      "cdLine": "bg-red-500",
+      "icon": "text-red-500"
+    },
+    "orange": {
+      "container": "text-orange-500",
+      "cdLine": "bg-orange-500",
+      "icon": "text-orange-500"
+    },
+    "amber": {
+      "container": "text-amber-500",
+      "cdLine": "bg-amber-500",
+      "icon": "text-amber-500"
+    },
+    "yellow": {
+      "container": "text-yellow-500",
+      "cdLine": "bg-yellow-500",
+      "icon": "text-yellow-500"
+    },
+    "lime": {
+      "container": "text-lime-500",
+      "cdLine": "bg-lime-500",
+      "icon": "text-lime-500"
+    },
+    "green": {
+      "container": "text-green-500",
+      "cdLine": "bg-green-500",
+      "icon": "text-green-500"
+    },
+    "emerald": {
+      "container": "text-emerald-500",
+      "cdLine": "bg-emerald-500",
+      "icon": "text-emerald-500"
+    },
+    "teal": {
+      "container": "text-teal-500",
+      "cdLine": "bg-teal-500",
+      "icon": "text-teal-500"
+    },
+    "cyan": {
+      "container": "text-cyan-500",
+      "cdLine": "bg-cyan-500",
+      "icon": "text-cyan-500"
+    },
+    "sky": {
+      "container": "text-sky-500",
+      "cdLine": "bg-sky-500",
+      "icon": "text-sky-500"
+    },
+    "blue": {
+      "container": "text-blue-500",
+      "cdLine": "bg-blue-500",
+      "icon": "text-blue-500"
+    },
+    "indigo": {
+      "container": "text-indigo-500",
+      "cdLine": "bg-indigo-500",
+      "icon": "text-indigo-500"
+    },
+    "violet": {
+      "container": "text-violet-500",
+      "cdLine": "bg-violet-500",
+      "icon": "text-violet-500"
+    },
+    "purple": {
+      "container": "text-purple-500",
+      "cdLine": "bg-purple-500",
+      "icon": "text-purple-500"
+    },
+    "fuchsia": {
+      "container": "text-fuchsia-500",
+      "cdLine": "bg-fuchsia-500",
+      "icon": "text-fuchsia-500"
+    },
+    "pink": {
+      "container": "text-pink-500",
+      "cdLine": "bg-pink-500",
+      "icon": "text-pink-500"
+    },
+    "rose": {
+      "container": "text-rose-500",
+      "cdLine": "bg-rose-500",
+      "icon": "text-rose-500"
+    }
+  },
+  "elegant": {
+    "base": "flex flex-row justify-start items-center py-1 px-4 shadow text-slate-700 bg-white dark:bg-slate-700/10 dark:text-white overflow-hidden",
+    "slate": {
+      "container": "text-slate-600 dark:text-white bg-slate-50 border-slate-500 dark:bg-slate-700/10",
+      "cdLine":"bg-slate-500"
+    } ,
+    "gray": {
+      "container": "text-gray-600 dark:text-white bg-gray-50 border-gray-500 dark:bg-gray-700/10",
+      "cdLine": "bg-gray-500"
+    } ,
+    "zinc": {
+      "container": "text-zinc-600 dark:text-white bg-zinc-50 border-zinc-500 dark:bg-zinc-700/10",
+      "cdLine": "bg-zinc-500"
+    } ,
+    "neutral": {
+      "container": "text-neutral-600 dark:text-white bg-neutral-50 border-neutral-500 dark:bg-neutral-700/10",
+      "cdLine": "bg-neutral-500"
+    } ,
+    "stone": {
+      "container": "text-stone-600 dark:text-white bg-stone-50 border-stone-500 dark:bg-stone-700/10",
+      "cdLine": "bg-stone-500"
+    } ,
+    "red": {
+      "container": "text-red-600 dark:text-white bg-red-50 border-red-500 dark:bg-red-700/10",
+      "cdLine": "bg-red-500"
+    } ,
+    "orange": {
+      "container": "text-orange-600 dark:text-white bg-orange-50 border-orange-500 dark:bg-orange-700/10",
+      "cdLine": "bg-orange-500"
+    } ,
+    "amber": {
+      "container": "text-amber-600 dark:text-white bg-amber-50 border-amber-500 dark:bg-amber-700/10",
+      "cdLine": "bg-amber-500"
+    } ,
+    "yellow": {
+      "container": "text-yellow-600 dark:text-white bg-yellow-50 border-yellow-500 dark:bg-yellow-700/10",
+      "cdLine": "bg-yellow-500"
+    } ,
+    "lime": {
+      "container": "text-lime-600 dark:text-white bg-lime-50 border-lime-500 dark:bg-lime-700/10",
+      "cdLine": "bg-lime-500"
+    } ,
+    "green": {
+      "container": "text-green-600 dark:text-white bg-green-50 border-green-500 dark:bg-green-700/10",
+      "cdLine": "bg-green-500"
+    } ,
+    "emerald": {
+      "container": "text-emerald-600 dark:text-white bg-emerald-50 border-emerald-500 dark:bg-emerald-700/10",
+      "cdLine": "bg-emerald-500"
+    } ,
+    "teal": {
+      "container": "text-teal-600 dark:text-white bg-teal-50 border-teal-500 dark:bg-teal-700/10",
+      "cdLine": "bg-teal-500"
+    } ,
+    "cyan": {
+      "container": "text-cyan-600 dark:text-white bg-cyan-50 border-cyan-500 dark:bg-cyan-700/10",
+      "cdLine": "bg-cyan-500"
+    } ,
+    "sky": {
+      "container": "text-sky-600 dark:text-white bg-sky-50 border-sky-500 dark:bg-sky-700/10",
+      "cdLine": "bg-sky-500"
+    } ,
+    "blue": {
+      "container": "text-blue-600 dark:text-white bg-blue-50 border-blue-500 dark:bg-blue-700/10",
+      "cdLine": "bg-blue-500"
+    } ,
+    "indigo": {
+      "container": "text-indigo-600 dark:text-white bg-indigo-50 border-indigo-500 dark:bg-indigo-700/10",
+      "cdLine": "bg-indigo-500"
+    } ,
+    "violet": {
+      "container": "text-violet-600 dark:text-white bg-violet-50 border-violet-500 dark:bg-violet-700/10",
+      "cdLine": "bg-violet-500"
+    } ,
+    "purple": {
+      "container": "text-purple-600 dark:text-white bg-purple-50 border-purple-500 dark:bg-purple-700/10",
+      "cdLine": "bg-purple-500"
+    } ,
+    "fuchsia": {
+      "container": "text-fuchsia-600 dark:text-white bg-fuchsia-50 border-fuchsia-500 dark:bg-fuchsia-700/10",
+      "cdLine": "bg-fuchsia-500"
+    } ,
+    "pink": {
+      "container": "text-pink-600 dark:text-white bg-pink-50 border-pink-500 dark:bg-pink-700/10",
+      "cdLine": "bg-pink-500"
+    } ,
+    "rose": {
+      "container": "text-rose-600 dark:text-white bg-rose-50 border-rose-500 dark:bg-rose-700/10",
+      "cdLine": "bg-rose-500"
+    }
+  },
+  "block": {
+    "base": "shadow pl-1 pr-4 text-gray-700 bg-white dark:bg-slate-800 dark:text-white overflow-hidden",
+    "slate": {
+      "icon": "text-slate-600 bg-slate-200 border-slate-500 dark:bg-slate-500 dark:border-slate-700 dark:text-white",
+      "cdLine": "bg-slate-500"
+    },
+    "gray": {
+      "icon": "text-gray-600 bg-gray-200 border-gray-500 dark:bg-gray-500 dark:border-gray-700 dark:text-white",
+      "cdLine":  "bg-gray-500"
+    },
+    "zinc": {
+      "icon": "text-zinc-600 bg-zinc-200 border-zinc-500 dark:bg-zinc-500 dark:border-zinc-700 dark:text-white",
+      "cdLine":  "bg-zinc-500"
+    },
+    "neutral": {
+      "icon": "text-neutral-600 bg-neutral-200 border-neutral-500 dark:bg-neutral-500 dark:border-neutral-700 dark:text-white",
+      "cdLine":  "bg-neutral-500"
+    },
+    "stone": {
+      "icon": "text-stone-600 bg-stone-200 border-stone-500 dark:bg-stone-500 dark:border-stone-700 dark:text-white",
+      "cdLine":  "bg-stone-500"
+    },
+    "red": {
+      "icon": "text-red-600 bg-red-200 border-red-500 dark:bg-red-500 dark:border-red-700 dark:text-white",
+      "cdLine":  "bg-red-500"
+    },
+    "orange": {
+      "icon": "text-orange-600 bg-orange-200 border-orange-500 dark:bg-orange-500 dark:border-orange-700 dark:text-white",
+      "cdLine":  "bg-orange-500"
+    },
+    "amber": {
+      "icon": "text-amber-600 bg-amber-200 border-amber-500 dark:bg-amber-500 dark:border-amber-700 dark:text-white",
+      "cdLine":  "bg-amber-500"
+    },
+    "yellow": {
+      "icon": "text-yellow-600 bg-yellow-200 border-yellow-500 dark:bg-yellow-500 dark:border-yellow-700 dark:text-white",
+      "cdLine":  "bg-yellow-500"
+    },
+    "lime": {
+      "icon": "text-lime-600 bg-lime-200 border-lime-500 dark:bg-lime-500 dark:border-lime-700 dark:text-white",
+      "cdLine":  "bg-lime-500"
+    },
+    "green": {
+      "icon": "text-green-600 bg-green-200 border-green-500 dark:bg-green-500 dark:border-green-700 dark:text-white",
+      "cdLine":  "bg-green-500"
+    },
+    "emerald": {
+      "icon": "text-emerald-600 bg-emerald-200 border-emerald-500 dark:bg-emerald-500 dark:border-emerald-700 dark:text-white",
+      "cdLine":  "bg-emerald-500"
+    },
+    "teal": {
+      "icon": "text-teal-600 bg-teal-200 border-teal-500 dark:bg-teal-500 dark:border-teal-700 dark:text-white",
+      "cdLine":  "bg-teal-500"
+    },
+    "cyan": {
+      "icon": "text-cyan-600 bg-cyan-200 border-cyan-500 dark:bg-cyan-500 dark:border-cyan-700 dark:text-white",
+      "cdLine":  "bg-cyan-500"
+    },
+    "sky": {
+      "icon": "text-sky-600 bg-sky-200 border-sky-500 dark:bg-sky-500 dark:border-sky-700 dark:text-white",
+      "cdLine":  "bg-sky-500"
+    },
+    "blue": {
+      "icon": "text-blue-600 bg-blue-200 border-blue-500 dark:bg-blue-500 dark:border-blue-700 dark:text-white",
+      "cdLine":  "bg-blue-500"
+    },
+    "indigo": {
+      "icon": "text-indigo-600 bg-indigo-200 border-indigo-500 dark:bg-indigo-500 dark:border-indigo-700 dark:text-white",
+      "cdLine":  "bg-indigo-500"
+    },
+    "violet": {
+      "icon": "text-violet-600 bg-violet-200 border-violet-500 dark:bg-violet-500 dark:border-violet-700 dark:text-white",
+      "cdLine":  "bg-violet-500"
+    },
+    "purple": {
+      "icon": "text-purple-600 bg-purple-200 border-purple-500 dark:bg-purple-500 dark:border-purple-700 dark:text-white",
+      "cdLine":  "bg-purple-500"
+    },
+    "fuchsia": {
+      "icon": "text-fuchsia-600 bg-fuchsia-200 border-fuchsia-500 dark:bg-fuchsia-500 dark:border-fuchsia-700 dark:text-white",
+      "cdLine":  "bg-fuchsia-500"
+    },
+    "pink": {
+      "icon": "text-pink-600 bg-pink-200 border-pink-500 dark:bg-pink-500 dark:border-pink-700 dark:text-white",
+      "cdLine":  "bg-pink-500"
+    },
+    "rose": {
+      "icon": "text-rose-600 bg-rose-200 border-rose-500 dark:bg-rose-500 dark:border-rose-700 dark:text-white",
+      "cdLine":  "bg-rose-500"
+    }
+  }
+}

@@ -71,14 +71,14 @@ export default defineComponent({
 ```
 
 ## :rocket: Components
-
+- [Alert](https://youtu.be/BoGcU6olNsg)🚀
 - [Button](https://youtu.be/A42a0Tcls5s)
 - Form & Input Components
   - [Input Group](https://youtu.be/EanH8XQNMU8)
   - [Text Input](https://youtu.be/EanH8XQNMU8)
   - [Text Area Input](https://youtu.be/cCQSoqIfJMM)
   - [Switch Input](https://youtu.be/a5RpQl2cnEs)
-  - [Select Input](https://youtu.be/nJ4bQjdvxPM) 🚀
+  - [Select Input](https://youtu.be/nJ4bQjdvxPM) 
 
 > :telescope: Other components coming soon, please check [Github](https://github.com/sinan-aydogan/tailadmin-ui-kit)
 
