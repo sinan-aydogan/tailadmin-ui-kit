@@ -1,19 +1,26 @@
 <script>
 import { defineComponent, ref } from "vue";
 import "@/index.css";
-import TInputGroup from "@/lib-components/Input/TInputGroup";
-import TSelectInput from "@/lib-components/Input/TSelectInput";
-import TAlert from "@/lib-components/Alert/TAlert";
-// import {TAlert} from "tailadmin-ui-kit";
 
-// Uncomment import and local "components" registration if library is not registered globally.
-// import { TailadminUiKitSample } from '@/entry.esm';
+import TButton from "@/lib-components/Button/TButton";
+import TModal from "@/lib-components/Modal/TModal";
+// import {TModal, TButton} from "tailadmin-ui-kit";
 
 export default defineComponent({
   name: "ServeDev",
-  components: { TAlert },
+  components: { TModal, TButton },
 
-  setup() {},
+  setup() {
+    const showModal = ref(false);
+    const saveForm = () => {
+      alert("save form");
+    };
+
+    return {
+      showModal,
+      saveForm,
+    };
+  },
 });
 </script>
 
@@ -36,56 +43,162 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <div
-      style="
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        justify-content: center;
-      "
-    >
-      <t-alert
-        design="filled"
-        color="pink"
-        title="Ramazan Bayramınız Kutlu Olsun"
-        :timer="3000"
-        :timer-status="false"
-        block
+    <div style="margin-left: auto; margin-right: auto; display: flex">
+      <t-button @click="showModal = true">Add New User</t-button>
+      <t-modal
+        v-model="showModal"
+        @close="showModal = false"
+        closeable
+        close-button
       >
-        <template #icon>
-          <svg
-            fill="currentColor"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
-            height="40px"
-            viewBox="0 0 1000 1000"
-            enable-background="new 0 0 1000 1000"
-            xml:space="preserve"
-          >
-            <metadata>
-              Svg Vector Icons : http://www.onlinewebfonts.com/icon
-            </metadata>
-            <g>
-              <g
-                transform="translate(0.000000,498.000000) scale(0.100000,-0.100000)"
-              >
-                <path
-                  d="M7035.5,4748.6c-134.5-44.2-224.8-169.1-269-376.6c-30.7-153.7-26.9-561,9.6-835.7c17.3-121,30.7-230.5,30.7-244c0-11.5-105.7,26.9-234.4,90.3c-130.7,61.5-307.4,134.5-395.8,161.4c-194.1,61.5-391.9,67.2-465,15.4c-26.9-17.3-989.4-977.9-2142.1-2132.5L1475.6-673l-5.8-140.2c-7.7-121,1.9-167.1,63.4-349.7c38.4-115.3,138.3-342,222.9-505.3c82.6-163.3,151.8-297.8,151.8-297.8c0-1.9-144.1,5.8-320.8,15.4c-522.6,28.8-1006.7-26.9-1239.2-142.1c-172.9-88.4-247.8-196-247.8-355.4c0-190.2,80.7-292,395.8-493.7c222.9-144.1,328.5-251.7,347.7-353.5c21.1-117.2-7.7-330.4-78.8-582.1c-36.5-134.5-67.2-282.4-67.2-336.2c1.9-178.7,113.3-349.6,278.6-426.5c167.1-78.8,244-63.4,643.6,128.7c159.5,74.9,317,138.3,368.9,144.1c119.1,17.3,211.3-30.7,405.4-203.6c172.9-155.6,267.1-209.4,393.8-224.8c357.3-42.3,505.3,261.3,463,943.3c-9.6,126.8-28.8,320.8-46.1,430.3c-17.3,109.5-28.8,203.7-23.1,207.5c3.8,3.8,88.4-36.5,184.4-90.3c213.3-119.1,547.5-257.5,691.6-288.2c57.6-11.5,159.5-17.3,226.7-13.4l123,7.7l2084.5,2084.5C7638.8-369.4,8595.5,595,8618.6,625.8c34.6,48,42.2,82.6,40.3,201.7c-3.8,194-71.1,391.9-269,781.9l-157.5,313.2l282.4-11.5c464.9-21.1,924.1,38.4,1139.3,146c174.8,88.4,245.9,192.1,245.9,355.4c0,194-76.8,290.1-393.8,493.7c-222.9,144.1-328.5,251.7-347.7,353.5c-21.1,117.2,7.7,330.4,78.8,582.1c36.5,134.5,67.2,282.4,67.2,336.2c-1.9,182.5-121,359.3-292,434.2c-155.6,67.2-253.6,48-611-124.9c-174.8-84.5-334.3-149.9-388.1-155.6c-119.1-17.3-211.3,30.7-405.4,203.6c-82.6,74.9-184.5,151.8-228.6,174.8C7292.9,4754.4,7114.3,4773.6,7035.5,4748.6z M7248.7,4368.2c26.9-17.3,92.2-71.1,144.1-121c53.8-48,132.6-113.3,174.8-142.2l78.8-51.9l-192.1-513c-105.7-282.4-197.9-520.6-205.6-528.3c-19.2-21.1-44.2,98-96.1,449.6c-42.3,284.3-61.5,785.8-32.6,887.6C7137.3,4408.6,7179.6,4416.3,7248.7,4368.2z M8924.1,4228c34.6-48,34.6-51.9-32.7-288.2c-86.5-305.5-119.1-559.1-88.4-707c11.5-59.6,15.4-113.4,7.7-121c-17.3-13.4-1097-440-1118.2-440c-7.7,0-42.2,25-76.8,53.8l-65.3,53.8l224.8,595.6l224.8,595.6l126.8,21.1c88.4,15.4,207.5,63.4,397.7,157.5c153.7,76.8,290.1,134.5,317,130.6C8866.4,4277.9,8902.9,4254.9,8924.1,4228z M6124.9,3186.7c186.4-63.4,634-299.7,906.8-482.2c441.9-292,576.4-441.9,941.4-1054.7c3.8-9.6-824.2-15.4-1842.4-15.4H4280.5l806.9,806.9C5994.2,3350,5880.9,3267.4,6124.9,3186.7z M9083.5,2764c30.7-25,146-103.7,257.4-178.7c111.4-73,205.6-144.1,209.4-157.5c32.6-111.4-653.2-188.3-1291.1-144.1c-269,19.2-317,30.7-318.9,82.6c0,9.6,1041.3,432.3,1077.8,438C9025.9,2806.3,9054.7,2787.1,9083.5,2764z M8224.7,1121.4c32.6-82.6,63.4-182.5,71.1-224.8l15.4-73L7467.8-19.8l-843.4-843.4H4219c-1323.7,0-2407.3,5.8-2407.3,13.4c0,9.6,472.6,488,1050.9,1066.3l1052.8,1052.8h2126.8H8169L8224.7,1121.4z M5523.5-1971.7C5122-2382.8,4666.7-2842,4514.9-2991.8l-276.7-276.7l-119.1,30.8c-261.3,67.2-701.2,293.9-1110.5,572.5c-338.1,228.6-470.7,374.6-728.1,789.6c-107.6,171-334.3,601.3-334.3,632.1c0,9.6,970.2,15.4,2153.7,15.4h2153.7L5523.5-1971.7z M2051.9-2340.6l134.5-11.5l-509.1-280.5c-280.5-155.6-530.2-292-555.2-305.5c-40.3-21.1-50-17.3-101.8,46.1c-32.7,38.4-169.1,144.1-303.5,232.5c-136.4,90.3-253.6,172.9-261.3,184.4c-38.4,61.5,126.8,119.1,438,151.8C1052.9-2306,1800.3-2317.5,2051.9-2340.6z M2426.6-2672.9c0-13.5-21.1-90.3-46.1-169.1c-26.9-78.8-123-374.6-213.3-657.1c-163.3-509.1-167.1-514.9-219-514.9c-94.1,0-255.5-59.6-507.2-186.4c-136.4-67.2-265.1-121-286.3-117.2c-23,3.8-55.7,26.9-76.8,53.8c-32.7,44.2-32.7,53.8-5.8,153.7c99.9,357.3,124.9,482.2,132.6,637.8l7.7,171l582.1,324.7c320.8,178.7,595.6,324.7,609,324.7C2415-2649.9,2426.6-2661.4,2426.6-2672.9z M2789.7-3139.8c111.4-589.8,147.9-1166.2,80.7-1275.7c-28.8-44.2-105.7-9.6-240.2,113.4c-69.2,63.4-161.4,138.3-203.6,165.2c-42.3,28.8-73,55.7-69.2,63.4c3.8,5.8,86.5,263.2,184.4,568.7c178.7,559.1,190.2,593.7,201.7,582.1C2747.4-2926.5,2768.5-3024.5,2789.7-3139.8z"
-                />
-              </g>
-            </g>
-          </svg>
+        <template #header> <b style="color: red">Add New User</b> </template>
+
+        <template #subHeader>
+          Please fill in the form below to add a new user.
         </template>
-        <p>
-          Sevdiklerinizle mutlu, sağlıklı ve huzurlu bir bayram geçirmeniz
-          dileğiyle.
-        </p>
-        <p style="position: absolute; right: 0; bottom: 5px">#tailadmin</p>
-      </t-alert>
+
+        <template #default>
+          <div class="md:grid md:grid-cols-3 md:gap-6">
+            <div class="mt-5 md:mt-0 md:col-span-2">
+              <form action="#" method="POST">
+                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  <div class="grid grid-cols-3 gap-6">
+                    <div class="col-span-3 sm:col-span-2">
+                      <label
+                        for="company-website"
+                        class="block text-sm font-medium text-gray-700"
+                      >
+                        Website
+                      </label>
+                      <div class="mt-1 flex rounded-md shadow-sm">
+                        <span
+                          class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm"
+                        >
+                          http://
+                        </span>
+                        <input
+                          type="text"
+                          name="company-website"
+                          id="company-website"
+                          class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                          placeholder="www.example.com"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      for="about"
+                      class="block text-sm font-medium text-gray-700"
+                    >
+                      About
+                    </label>
+                    <div class="mt-1">
+                      <textarea
+                        id="about"
+                        name="about"
+                        rows="3"
+                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                        placeholder="you@example.com"
+                      />
+                    </div>
+                    <p class="mt-2 text-sm text-gray-500">
+                      Brief description for your profile. URLs are hyperlinked.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700">
+                      Photo
+                    </label>
+                    <div class="mt-1 flex items-center">
+                      <span
+                        class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100"
+                      >
+                        <svg
+                          class="h-full w-full text-gray-300"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"
+                          />
+                        </svg>
+                      </span>
+                      <button
+                        type="button"
+                        class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      >
+                        Change
+                      </button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700">
+                      Cover photo
+                    </label>
+                    <div
+                      class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
+                    >
+                      <div class="space-y-1 text-center">
+                        <svg
+                          class="mx-auto h-12 w-12 text-gray-400"
+                          stroke="currentColor"
+                          fill="none"
+                          viewBox="0 0 48 48"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        <div class="flex text-sm text-gray-600">
+                          <label
+                            for="file-upload"
+                            class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                          >
+                            <span>Upload a file</span>
+                            <input
+                              id="file-upload"
+                              name="file-upload"
+                              type="file"
+                              class="sr-only"
+                            />
+                          </label>
+                          <p class="pl-1">or drag and drop</p>
+                        </div>
+                        <p class="text-xs text-gray-500">
+                          PNG, JPG, GIF up to 10MB
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </template>
+
+        <template #footer>
+          <div class="flex justify-between w-full">
+            <!--Cancel-->
+            <t-button design="light" color="slate" @click="showModal = false"
+              >Cancel</t-button
+            >
+
+            <!--Actions-->
+            <div class="flex space-x-2">
+              <t-button color="amber">Reset</t-button>
+              <t-button color="green" @click="saveForm">Submit</t-button>
+            </div>
+          </div>
+        </template>
+      </t-modal>
     </div>
   </div>
 </template>
