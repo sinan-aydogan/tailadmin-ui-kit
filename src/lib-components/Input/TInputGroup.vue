@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col"
+    class="flex flex-col mt-1"
     :class="[
       GlobalStyles.grid.gridSm[phoneWidth],
       GlobalStyles.grid.gridMd[tabletWidth],
@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import { computed, defineComponent, provide, ref, toRefs } from "vue";
+import { computed, defineComponent, provide, toRefs } from "vue";
 import Style from "./Style.json";
 import GlobalStyles from "../GlobalStyles.json";
 

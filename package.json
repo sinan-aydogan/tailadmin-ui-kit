@@ -1,7 +1,7 @@
 {
   "name": "tailadmin-ui-kit",
   "author": "Sinan AYDOĞAN",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "VueJS UI Kit for Admin Panels",
   "license": "MIT",
   "main": "dist/tailadmin-ui-kit.ssr.js",
@@ -31,6 +31,7 @@
     "component",
     "ui",
     "ui kit",
+    "vue component",
     "table component",
     "button component",
     "avatar component",
@@ -41,11 +42,16 @@
     "front-end",
     "web",
     "opensource",
+    "form component",
+    "text input",
+    "text area",
     "select component",
     "select input",
     "vue select",
     "switch component",
-    "modal component"
+    "modal component",
+    "content card",
+    "showcase"
   ],
   "files": [
     "dist/*",
@@ -94,6 +100,7 @@
   },
   "dependencies": {
     "@rollup/plugin-json": "^4.1.0",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@vueuse/core": "^8.3.1",
     "lodash": "^4.17.21",
     "vuedraggable": "^4.1.0"

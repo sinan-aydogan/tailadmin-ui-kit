@@ -4,14 +4,69 @@ import "@/index.css";
 
 import TButton from "@/lib-components/Button/TButton";
 import TModal from "@/lib-components/Modal/TModal";
+import TContentCard from "@/lib-components/ContentCard/TContentCard";
+import { runInContext as axios } from "lodash";
+import TTextInput from "@/lib-components/Input/TTextInput";
+import TInputGroup from "@/lib-components/Input/TInputGroup";
+import TTextAreaInput from "@/lib-components/Input/TTextAreaInput";
+import TSelectInput from "@/lib-components/Input/TSelectInput";
 // import {TModal, TButton} from "tailadmin-ui-kit";
 
 export default defineComponent({
   name: "ServeDev",
-  components: { TModal, TButton },
+  components: {
+    TSelectInput,
+    TTextAreaInput,
+    TInputGroup,
+    TTextInput,
+    TContentCard,
+    TModal,
+    TButton,
+  },
 
   setup() {
     const showModal = ref(false);
+    const posts = [
+      {
+        id: 1,
+        title: "Uncharted",
+        subTitle: "Fortune favors the bold.",
+        year: "2022",
+        genre: "Action",
+        actors: [
+          "Ben Schwartz",
+          "Idris Elba",
+          "Colleen O'Shaughnessey",
+          "Jim Carrey",
+        ],
+        overview:
+          "A young street-smart, Nathan Drake and his wisecracking partner Victor “Sully” Sullivan embark on a dangerous pursuit of “the greatest treasure never found” while also tracking clues that may lead to Nathan’s long-lost brother.",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tlZpSxYuBRoVJBOpUrPdQe9FmFq.jpg",
+      },
+      {
+        id: 2,
+        title: "Sonic the Hedgehog 2",
+        subTitle: "Welcome to the next level.",
+        year: "2022",
+        genre: "Action",
+        actors: ["Tom Holland", "Mark Wahlberg", "Sophia Ali"],
+        overview:
+          "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting journey to find the emerald before it falls into the wrong hands.",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
+      },
+    ];
+    const samples = [
+      {
+        title: "Delete your account",
+        description: "Are you sure you want to delete your account?",
+        action: "Delete account",
+      },
+      {
+        title: "Continue to checkout",
+        description: "Your cart is empty. Please add some items to your cart.",
+        action: "Continue to checkout",
+      },
+    ];
     const saveForm = () => {
       alert("save form");
     };
@@ -19,6 +74,8 @@ export default defineComponent({
     return {
       showModal,
       saveForm,
+      posts,
+      samples,
     };
   },
 });
@@ -43,162 +100,64 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <div style="margin-left: auto; margin-right: auto; display: flex">
-      <t-button @click="showModal = true">Add New User</t-button>
-      <t-modal
-        v-model="showModal"
-        @close="showModal = false"
-        closeable
-        close-button
+    <div
+      style="
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 50px;
+        width: 100vw;
+      "
+    >
+      <t-content-card
+        title-size="2xl"
+        title-position="left"
+        collapsible
+        title="Create a department"
+        subtitle="Fill in the fields"
+        footer-position="center"
       >
-        <template #header> <b style="color: red">Add New User</b> </template>
-
-        <template #subHeader>
-          Please fill in the form below to add a new user.
+        <template #top-actions>
+          <svg
+            class="text-sky-700"
+            fill="currentColor"
+            width="24px"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 512"
+          >
+            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path
+              d="M288 48C288 21.49 309.5 0 336 0H432C458.5 0 480 21.49 480 48V192H520V120C520 106.7 530.7 96 544 96C557.3 96 568 106.7 568 120V192H592C618.5 192 640 213.5 640 240V464C640 490.5 618.5 512 592 512H336C309.5 512 288 490.5 288 464V48zM352 112C352 120.8 359.2 128 368 128H400C408.8 128 416 120.8 416 112V80C416 71.16 408.8 64 400 64H368C359.2 64 352 71.16 352 80V112zM368 160C359.2 160 352 167.2 352 176V208C352 216.8 359.2 224 368 224H400C408.8 224 416 216.8 416 208V176C416 167.2 408.8 160 400 160H368zM352 304C352 312.8 359.2 320 368 320H400C408.8 320 416 312.8 416 304V272C416 263.2 408.8 256 400 256H368C359.2 256 352 263.2 352 272V304zM528 256C519.2 256 512 263.2 512 272V304C512 312.8 519.2 320 528 320H560C568.8 320 576 312.8 576 304V272C576 263.2 568.8 256 560 256H528zM512 400C512 408.8 519.2 416 528 416H560C568.8 416 576 408.8 576 400V368C576 359.2 568.8 352 560 352H528C519.2 352 512 359.2 512 368V400zM246.6 233.4C259.1 245.9 259.1 266.1 246.6 278.6L166.6 358.6C154.1 371.1 133.9 371.1 121.4 358.6C108.9 346.1 108.9 325.9 121.4 313.4L146.7 288H32C14.33 288 0 273.7 0 256C0 238.3 14.33 224 32 224H146.7L121.4 198.6C108.9 186.1 108.9 165.9 121.4 153.4C133.9 140.9 154.1 140.9 166.6 153.4L246.6 233.4z"
+            />
+          </svg>
+          <span class="text-sm">İzmit Factory</span>
         </template>
 
         <template #default>
-          <div class="md:grid md:grid-cols-3 md:gap-6">
-            <div class="mt-5 md:mt-0 md:col-span-2">
-              <form action="#" method="POST">
-                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
-                  <div class="grid grid-cols-3 gap-6">
-                    <div class="col-span-3 sm:col-span-2">
-                      <label
-                        for="company-website"
-                        class="block text-sm font-medium text-gray-700"
-                      >
-                        Website
-                      </label>
-                      <div class="mt-1 flex rounded-md shadow-sm">
-                        <span
-                          class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm"
-                        >
-                          http://
-                        </span>
-                        <input
-                          type="text"
-                          name="company-website"
-                          id="company-website"
-                          class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                          placeholder="www.example.com"
-                        />
-                      </div>
-                    </div>
-                  </div>
+          <!--Name-->
+          <t-input-group label="Department Name">
+            <t-text-input />
+          </t-input-group>
 
-                  <div>
-                    <label
-                      for="about"
-                      class="block text-sm font-medium text-gray-700"
-                    >
-                      About
-                    </label>
-                    <div class="mt-1">
-                      <textarea
-                        id="about"
-                        name="about"
-                        rows="3"
-                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-                        placeholder="you@example.com"
-                      />
-                    </div>
-                    <p class="mt-2 text-sm text-gray-500">
-                      Brief description for your profile. URLs are hyperlinked.
-                    </p>
-                  </div>
+          <!--Main Department-->
+          <t-input-group label="Main Department">
+            <t-select-input place-holder="Select a department" />
+          </t-input-group>
 
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700">
-                      Photo
-                    </label>
-                    <div class="mt-1 flex items-center">
-                      <span
-                        class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100"
-                      >
-                        <svg
-                          class="h-full w-full text-gray-300"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"
-                          />
-                        </svg>
-                      </span>
-                      <button
-                        type="button"
-                        class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      >
-                        Change
-                      </button>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700">
-                      Cover photo
-                    </label>
-                    <div
-                      class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
-                    >
-                      <div class="space-y-1 text-center">
-                        <svg
-                          class="mx-auto h-12 w-12 text-gray-400"
-                          stroke="currentColor"
-                          fill="none"
-                          viewBox="0 0 48 48"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                        <div class="flex text-sm text-gray-600">
-                          <label
-                            for="file-upload"
-                            class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
-                          >
-                            <span>Upload a file</span>
-                            <input
-                              id="file-upload"
-                              name="file-upload"
-                              type="file"
-                              class="sr-only"
-                            />
-                          </label>
-                          <p class="pl-1">or drag and drop</p>
-                        </div>
-                        <p class="text-xs text-gray-500">
-                          PNG, JPG, GIF up to 10MB
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
+          <!--Description-->
+          <t-input-group label="Description">
+            <t-text-area-input />
+          </t-input-group>
         </template>
 
         <template #footer>
-          <div class="flex justify-between w-full">
-            <!--Cancel-->
-            <t-button design="light" color="slate" @click="showModal = false"
-              >Cancel</t-button
-            >
-
-            <!--Actions-->
-            <div class="flex space-x-2">
-              <t-button color="amber">Reset</t-button>
-              <t-button color="green" @click="saveForm">Submit</t-button>
-            </div>
-          </div>
+          <t-button block>Search</t-button>
+          <!--<t-button color="amber">Reset</t-button>
+          <t-button color="emerald">Save</t-button>-->
         </template>
-      </t-modal>
+      </t-content-card>
     </div>
   </div>
 </template>
