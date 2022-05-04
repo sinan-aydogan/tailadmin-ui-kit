@@ -71,8 +71,9 @@ export default defineComponent({
 ```
 
 ## :rocket: Components
-- [Alert](https://youtu.be/BoGcU6olNsg)🚀
+- [Alert](https://youtu.be/BoGcU6olNsg)
 - [Button](https://youtu.be/A42a0Tcls5s)
+- [Content Card](https://youtu.be/NuYh3Dl7oXc)🚀
 - [Modal with Notification feature](https://youtu.be/iCJOApZVwQQ)
 - Form & Input Components
   - [Input Group](https://youtu.be/EanH8XQNMU8)

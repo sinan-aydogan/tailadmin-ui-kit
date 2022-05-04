@@ -18,7 +18,7 @@
       :class="[
         {
           'flex-row': design === 'horizontal',
-          'flex-col': design === 'vertical',
+          'flex-col': design === 'vertical' || design.includes('banner'),
         },
       ]"
     >
@@ -40,20 +40,24 @@
           <!--Title-->
           <div v-if="title || $slots.hasOwnProperty('title')">
             <h3
+              v-if="title"
               class="font-bold mb-2 text-slate-700 dark:text-slate-200"
               :class="[GlobalStyle.textSize[titleSize]]"
             >
               {{ title }}
             </h3>
+            <slot v-else name="title"></slot>
           </div>
           <!--Subtitle-->
           <div v-if="subtitle || $slots.hasOwnProperty('sub-title')">
             <p
+              v-if="subtitle"
               class="-mt-1 text-slate-500 dark:text-slate-400 -mt-2"
               :class="[GlobalStyle.textSize[subtitleSize]]"
             >
               {{ subtitle }}
             </p>
+            <slot v-else name="sub-title"></slot>
           </div>
         </div>
         <!--Top Actions Area-->
@@ -83,11 +87,11 @@
 
       <!--Content Wrapper-->
       <transition name="content">
-        <div v-show="showContent" class="flex flex-col w-full">
+        <div v-show="showContent" class="flex flex-col w-full h-full">
           <!--Content-->
           <div
             :class="[Style[design].content]"
-            class="h-full w-full text-slate-700 dark:text-slate-200 transition-all duration-500 overflow-hidden"
+            class="flex flex-grow text-slate-700 dark:text-slate-200 transition-all duration-500 overflow-hidden"
           >
             <slot></slot>
           </div>

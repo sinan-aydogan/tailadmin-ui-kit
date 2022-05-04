@@ -2,80 +2,32 @@
 import { defineComponent, ref } from "vue";
 import "@/index.css";
 
-import TButton from "@/lib-components/Button/TButton";
-import TModal from "@/lib-components/Modal/TModal";
 import TContentCard from "@/lib-components/ContentCard/TContentCard";
-import { runInContext as axios } from "lodash";
-import TTextInput from "@/lib-components/Input/TTextInput";
 import TInputGroup from "@/lib-components/Input/TInputGroup";
-import TTextAreaInput from "@/lib-components/Input/TTextAreaInput";
+import TTextInput from "@/lib-components/Input/TTextInput";
 import TSelectInput from "@/lib-components/Input/TSelectInput";
-// import {TModal, TButton} from "tailadmin-ui-kit";
+import TTextAreaInput from "@/lib-components/Input/TTextAreaInput";
+import TButton from "@/lib-components/Button/TButton";
+// import {TContentCard} from "tailadmin-ui-kit";
 
 export default defineComponent({
   name: "ServeDev",
   components: {
-    TSelectInput,
-    TTextAreaInput,
-    TInputGroup,
-    TTextInput,
-    TContentCard,
-    TModal,
     TButton,
+    TTextAreaInput,
+    TSelectInput,
+    TTextInput,
+    TInputGroup,
+    TContentCard,
   },
 
   setup() {
-    const showModal = ref(false);
-    const posts = [
-      {
-        id: 1,
-        title: "Uncharted",
-        subTitle: "Fortune favors the bold.",
-        year: "2022",
-        genre: "Action",
-        actors: [
-          "Ben Schwartz",
-          "Idris Elba",
-          "Colleen O'Shaughnessey",
-          "Jim Carrey",
-        ],
-        overview:
-          "A young street-smart, Nathan Drake and his wisecracking partner Victor “Sully” Sullivan embark on a dangerous pursuit of “the greatest treasure never found” while also tracking clues that may lead to Nathan’s long-lost brother.",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tlZpSxYuBRoVJBOpUrPdQe9FmFq.jpg",
-      },
-      {
-        id: 2,
-        title: "Sonic the Hedgehog 2",
-        subTitle: "Welcome to the next level.",
-        year: "2022",
-        genre: "Action",
-        actors: ["Tom Holland", "Mark Wahlberg", "Sophia Ali"],
-        overview:
-          "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting journey to find the emerald before it falls into the wrong hands.",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
-      },
-    ];
-    const samples = [
-      {
-        title: "Delete your account",
-        description: "Are you sure you want to delete your account?",
-        action: "Delete account",
-      },
-      {
-        title: "Continue to checkout",
-        description: "Your cart is empty. Please add some items to your cart.",
-        action: "Continue to checkout",
-      },
-    ];
     const saveForm = () => {
       alert("save form");
     };
 
     return {
-      showModal,
       saveForm,
-      posts,
-      samples,
     };
   },
 });
@@ -108,54 +60,34 @@ export default defineComponent({
         flex-direction: row;
         gap: 10px;
         padding: 50px;
-        width: 100vw;
+        width: 750px;
       "
     >
       <t-content-card
-        title-size="2xl"
-        title-position="left"
-        collapsible
-        title="Create a department"
-        subtitle="Fill in the fields"
-        footer-position="center"
+        radius=""
+        img-alt-text="Turning Red"
+        design="horizontal-banner"
+        title="Turning Red"
+        subtitle="Growing up is a beast."
+        img-src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg"
       >
-        <template #top-actions>
-          <svg
-            class="text-sky-700"
-            fill="currentColor"
-            width="24px"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 512"
-          >
-            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-            <path
-              d="M288 48C288 21.49 309.5 0 336 0H432C458.5 0 480 21.49 480 48V192H520V120C520 106.7 530.7 96 544 96C557.3 96 568 106.7 568 120V192H592C618.5 192 640 213.5 640 240V464C640 490.5 618.5 512 592 512H336C309.5 512 288 490.5 288 464V48zM352 112C352 120.8 359.2 128 368 128H400C408.8 128 416 120.8 416 112V80C416 71.16 408.8 64 400 64H368C359.2 64 352 71.16 352 80V112zM368 160C359.2 160 352 167.2 352 176V208C352 216.8 359.2 224 368 224H400C408.8 224 416 216.8 416 208V176C416 167.2 408.8 160 400 160H368zM352 304C352 312.8 359.2 320 368 320H400C408.8 320 416 312.8 416 304V272C416 263.2 408.8 256 400 256H368C359.2 256 352 263.2 352 272V304zM528 256C519.2 256 512 263.2 512 272V304C512 312.8 519.2 320 528 320H560C568.8 320 576 312.8 576 304V272C576 263.2 568.8 256 560 256H528zM512 400C512 408.8 519.2 416 528 416H560C568.8 416 576 408.8 576 400V368C576 359.2 568.8 352 560 352H528C519.2 352 512 359.2 512 368V400zM246.6 233.4C259.1 245.9 259.1 266.1 246.6 278.6L166.6 358.6C154.1 371.1 133.9 371.1 121.4 358.6C108.9 346.1 108.9 325.9 121.4 313.4L146.7 288H32C14.33 288 0 273.7 0 256C0 238.3 14.33 224 32 224H146.7L121.4 198.6C108.9 186.1 108.9 165.9 121.4 153.4C133.9 140.9 154.1 140.9 166.6 153.4L246.6 233.4z"
-            />
-          </svg>
-          <span class="text-sm">İzmit Factory</span>
-        </template>
-
         <template #default>
-          <!--Name-->
-          <t-input-group label="Department Name">
-            <t-text-input />
-          </t-input-group>
+          <div class="h-full flex flex-col justify-between">
+            <p>
+              Thirteen-year-old Mei is experiencing the awkwardness of being a
+              teenager with a twist – when she gets too excited, she transforms
+              into a giant red panda.
+            </p>
 
-          <!--Main Department-->
-          <t-input-group label="Main Department">
-            <t-select-input place-holder="Select a department" />
-          </t-input-group>
-
-          <!--Description-->
-          <t-input-group label="Description">
-            <t-text-area-input />
-          </t-input-group>
-        </template>
-
-        <template #footer>
-          <t-button block>Search</t-button>
-          <!--<t-button color="amber">Reset</t-button>
-          <t-button color="emerald">Save</t-button>-->
+            <div>
+              <span>Actors:</span>
+              <div class="flex space-x-2">
+                <t-button>Rosalie Chiang</t-button>
+                <t-button>Jin Park</t-button>
+                <t-button>Sandra Oh</t-button>
+              </div>
+            </div>
+          </div>
         </template>
       </t-content-card>
     </div>
