@@ -33,7 +33,7 @@
         :readonly="readOnly"
         :placeholder="placeholder"
         @input="$emit('update:modelValue', $event.target.value)"
-        class="flex z-0 my-1 px-2 w-full text-slate-700 dark:text-slate-200 bg-transparent outline-none focus:ring-2"
+        class="flex z-0 my-1 px-2 w-full border-0 text-slate-700 dark:text-slate-200 bg-transparent outline-none focus:ring-2"
         :class="{ 'cursor-not-allowed': disabled }"
         ref="input"
       />
