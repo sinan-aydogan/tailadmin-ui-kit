@@ -1,7 +1,7 @@
 {
   "name": "tailadmin-ui-kit",
   "author": "Sinan AYDOĞAN",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "VueJS UI Kit for Admin Panels",
   "license": "MIT",
   "main": "dist/tailadmin-ui-kit.ssr.js",
