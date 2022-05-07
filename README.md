@@ -1,6 +1,6 @@
 # TailAdmin UI Kit
 
-UI componentS library by VueJS and TailwindCSS.
+UI components library by VueJS and TailwindCSS.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
@@ -28,7 +28,7 @@ UI componentS library by VueJS and TailwindCSS.
 
 ## Installation
 
-Use the package manager [npm](https://pip.pypa.io/en/stable/) to install TailAdmin UI Kit.
+Use the package manager [npm](https://docs.npmjs.com/cli/v6/commands/npm-install) to install TailAdmin UI Kit.
 
 ## Usage
 
@@ -38,10 +38,6 @@ Please follow my [YouTube channel](https://www.youtube.com/playlist?list=PLbdS49
 npm install tailadmin-ui-kit
 ```
 
-```js
-/*Import styles in main.js or app.js*/
-import "tailadmin-ui-kit/src/index.css"
-```
 
 ```javascript
 // Import a component if you want to use in script block
@@ -67,7 +63,6 @@ export default defineComponent({
 ```html
 <!--Use component in template block-->
 <t-switch-input v-model="product.status" true-color="emerald" false-color="rose" loading/>
-
 ```
 
 ## :rocket: Components

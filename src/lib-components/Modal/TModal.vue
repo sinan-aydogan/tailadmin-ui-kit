@@ -154,7 +154,7 @@
               </div>
 
               <!--Common Content-->
-              <div v-else>
+              <div v-else class="w-full h-full">
                 <slot></slot>
               </div>
             </div>
@@ -167,23 +167,50 @@
               <slot v-if="$slots.footer" name="footer"></slot>
               <div v-else class="flex justify-between items-center w-full">
                 <t-button
-                  v-if="actionButtons.includes('cancel')"
-                  color="gray"
+                  v-if="
+                    actionButtons.includes('cancel') &&
+                    actionButtonsDef.hasOwnProperty('cancel')
+                  "
+                  :design="actionButtonsDef.cancel.design"
+                  :color="actionButtonsDef.cancel.color"
                   @click="close()"
-                  >{{ $t("global.cancel") }}
+                >
+                  <span
+                    v-if="actionButtonsDef.cancel.title"
+                    v-text="actionButtonsDef.cancel.title"
+                  ></span>
+                  <slot v-else name="action-cancel-button"></slot>
                 </t-button>
                 <div class="flex space-x-2">
                   <t-button
-                    v-if="actionButtons.includes('reset')"
-                    color="orange"
+                    v-if="
+                      actionButtons.includes('reset') &&
+                      actionButtonsDef.hasOwnProperty('reset')
+                    "
+                    :design="actionButtonsDef.reset.design"
+                    :color="actionButtonsDef.reset.color"
                     @click="$emit('reset')"
-                    >{{ $t("global.reset") }}
+                  >
+                    <span
+                      v-if="actionButtonsDef.reset.title"
+                      v-text="actionButtonsDef.reset.title"
+                    ></span>
+                    <slot v-else name="action-reset-button"></slot>
                   </t-button>
                   <t-button
-                    v-if="actionButtons.includes('save')"
-                    color="green"
+                    v-if="
+                      actionButtons.includes('submit') &&
+                      actionButtonsDef.hasOwnProperty('submit')
+                    "
+                    :design="actionButtonsDef.submit.design"
+                    :color="actionButtonsDef.submit.color"
                     @click="$emit('save')"
-                    >{{ $t("global.save") }}
+                  >
+                    <span
+                      v-if="actionButtonsDef.submit.title"
+                      v-text="actionButtonsDef.submit.title"
+                    ></span>
+                    <slot v-else name="action-submit-button"></slot>
                   </t-button>
                 </div>
               </div>
@@ -206,14 +233,12 @@ import {
   toRefs,
   watch,
 } from "vue";
-import { useWindowSize } from "@vueuse/core";
 
 /*Component*/
 import TButton from "@/lib-components/Button/TButton";
 import XMarkIcon from "@/lib-components/Icons/XMarkIcon";
 import ExpandIcon from "@/lib-components/Icons/ExpandIcon";
 import MinimizeIcon from "@/lib-components/Icons/MinimizeIcon";
-import { cloneDeep } from "lodash";
 
 export default defineComponent({
   name: "TModal",
@@ -275,6 +300,26 @@ export default defineComponent({
     notificationMessage: {
       type: String,
       default: "",
+    },
+    actionButtonsDef: {
+      type: Object,
+      default: {
+        reset: {
+          color: "amber",
+          style: "filled",
+          title: "Reset",
+        },
+        submit: {
+          color: "emerald",
+          style: "filled",
+          title: "Submit",
+        },
+        cancel: {
+          color: "gray",
+          style: "link-plus",
+          title: "Cancel",
+        },
+      },
     },
   },
 

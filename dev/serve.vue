@@ -8,11 +8,13 @@ import TTextInput from "@/lib-components/Input/TTextInput";
 import TSelectInput from "@/lib-components/Input/TSelectInput";
 import TTextAreaInput from "@/lib-components/Input/TTextAreaInput";
 import TButton from "@/lib-components/Button/TButton";
+import TModal from "@/lib-components/Modal/TModal";
 // import {TContentCard} from "tailadmin-ui-kit";
 
 export default defineComponent({
   name: "ServeDev",
   components: {
+    TModal,
     TButton,
     TTextAreaInput,
     TSelectInput,
@@ -22,11 +24,13 @@ export default defineComponent({
   },
 
   setup() {
+    const showModal = ref(true);
     const saveForm = () => {
       alert("save form");
     };
 
     return {
+      showModal,
       saveForm,
     };
   },
@@ -90,6 +94,11 @@ export default defineComponent({
           </div>
         </template>
       </t-content-card>
+
+      <t-modal
+        v-model="showModal"
+        :action-buttons="['submit', 'reset', 'cancel']"
+      ></t-modal>
     </div>
   </div>
 </template>
