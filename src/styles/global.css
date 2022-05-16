@@ -1,0 +1,43 @@
+/*Border*/
+.t-border {
+    @apply border
+}
+
+.t-border-0 {
+    @apply border-0
+}
+
+/*Flex*/
+.t-flex-row{
+    @apply flex-row
+}
+
+.t-flex-row-reverse{
+    @apply flex-row-reverse
+}
+
+/*Radius*/
+
+.t-radius-sm {
+    @apply rounded-sm;
+}
+
+.t-radius-md {
+    @apply rounded-md;
+}
+
+.t-radius-lg {
+    @apply rounded-lg;
+}
+
+.t-radius-xl {
+    @apply rounded-xl;
+}
+
+.t-radius-2xl {
+    @apply rounded-2xl;
+}
+
+.t-radius-full {
+    @apply rounded-full;
+}

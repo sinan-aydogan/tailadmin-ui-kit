@@ -1,95 +1,69 @@
-# TailAdmin UI Kit
+# 🌙 Moon
 
-UI components library by VueJS and TailwindCSS.
+[![npm (scoped)](https://img.shields.io/npm/v/@ulissesferreira/moon)](https://www.npmjs.com/package/@ulissesferreira/moon)
+[![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@ulissesferreira/moon)](https://bundlephobia.com/result?p=@ulissesferreira/moon@latest)
+[![NPM](https://img.shields.io/npm/l/@ulissesferreira/moon)](https://github.com/ulissesferreira/moon/blob/main/LICENSE)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D" />
-</p>
-<p align="center">
+A lightweight Vue 3 component library.
 
-<a href="https://ko-fi.com/sinanaydogan" target="_blank">
-    <img src="https://ko-fi.com/img/githubbutton_sm.svg">
-</a>
-
-</p>
-
-<p align="center">
-<a href="https://www.buymeacoffee.com/sinanaydogan">
-    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=sinanaydogan&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff">
-</a>
-</p>
-
-<p align="center">
-<a href="https://discord.gg/TnjA2GqYmw">
-    <img src="https://v2.tailadmin.dev/img/demo/discord.svg" height="40">
-</a>
-</p>
-
-## Installation
-
-Use the package manager [npm](https://docs.npmjs.com/cli/v6/commands/npm-install) to install TailAdmin UI Kit.
+When you are starting a new prototype you want to be able to develop features fast. We created this component library as a way for us to build products quickly without having to deal with complicated packages and a huge bundle sizes.
 
 ## Usage
 
-Please follow my [YouTube channel](https://www.youtube.com/playlist?list=PLbdS49WKsrOXTo_X_Ja6P3zll1yyhoIYN) for usages.
+First install the library using your prefered package manager
 
 ```bash
-npm install tailadmin-ui-kit
+yarn add @ulissesferreira/moon
 ```
 
+then you can import the available components like so
 
-```javascript
-// Import a component if you want to use in script block
-import { TSwitchInput } from "tailadmin-ui-kit"
-import {defineComponent} from 'vue';
-
-export default defineComponent({
-    name: 'Products',
-    components: {TSwitchInput},
-    setup() {
-        const form = ref({
-            name: '',
-            status: false
-        })
-
-        return {
-            form
-        }
-    }
-});
+```vue
+import { Button } from '@ulissesferreira/moon'
 ```
 
-```html
-<!--Use component in template block-->
-<t-switch-input v-model="product.status" true-color="emerald" false-color="rose" loading/>
+## Available commands
+
+Here is a list of all available npm commands.
+
+**Starting the dev environment**
+We use Vue Press to hold our component documentation and examples
+
+```bash
+yarn dev
 ```
 
-## :rocket: Components
-- [Alert](https://youtu.be/BoGcU6olNsg)
-- [Button](https://youtu.be/A42a0Tcls5s)
-- [Content Card](https://youtu.be/NuYh3Dl7oXc)🚀
-- [Modal with Notification feature](https://youtu.be/iCJOApZVwQQ)
-- Form & Input Components
-  - [Input Group](https://youtu.be/EanH8XQNMU8)
-  - [Text Input](https://youtu.be/EanH8XQNMU8)
-  - [Text Area Input](https://youtu.be/cCQSoqIfJMM)
-  - [Switch Input](https://youtu.be/a5RpQl2cnEs)
-  - [Select Input](https://youtu.be/nJ4bQjdvxPM) 
+**Building the documentation**
 
-> :telescope: Other components coming soon, please check [Github](https://github.com/sinan-aydogan/tailadmin-ui-kit)
+```bash
+yarn build
+```
 
-## Help
+**Serving the documentation**
 
-If you need to help more than this documentation:
-- You can join our [Discord Channel](https://discord.gg/TnjA2GqYmw) then ask your questions
+```bash
+yarn serve
+```
 
-## Contributing
+**Building the library bundles**
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+```bash
+yarn build:library
+```
 
-Please make sure to update tests as appropriate.
+**Analyzing bundle sizes with [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer)**
 
-## License
+```bash
+yarn analyze
+```
 
-The TailAdmin is open-sourced software licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+**Lint all files**
+
+```bash
+yarn lint
+```
+
+**Format all files**
+```bash
+yarn format
+```

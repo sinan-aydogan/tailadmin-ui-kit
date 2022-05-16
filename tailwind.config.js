@@ -1,12 +1,10 @@
 module.exports = {
-  content: ["./src/**/**/*.{vue,js,ts,jsx,json,tsx}"],
+  content: [
+    "./src/**/*.{html,js,vue,css}",
+    "./docs/**/*.{html,js,vue,css}",
+  ],
   theme: {
-    extend: {
-      aspectRatio: {
-        "4/3": "4 / 3",
-        "16/9": "16 / 9",
-      },
-    },
+    extend: {},
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
-};
+  plugins: [],
+}
