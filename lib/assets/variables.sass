@@ -1,0 +1,4 @@
+$radiuses: ("sm", "md", "lg", "xl", "2xl", "full")
+@each $radius in $radiuses
+    .t-radius-#{$radius}
+        @apply rounded-#{$radius}

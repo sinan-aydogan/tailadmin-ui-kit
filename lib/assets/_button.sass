@@ -1,0 +1,53 @@
+$colors: ("success","danger","info","warning","neutral","pink")
+$designs: ("solid","light","text","bordered")
+@function activeColor($i)
+    @if $i == "success"
+        @return "emerald"
+    @else if $i == "danger"
+        @return "rose"
+    @else if $i == "info"
+        @return "sky"
+    @else if $i == "warning"
+        @return "amber"
+    @else if $i == "neutral"
+        @return "slate"
+    @else if $i == "pink"
+        @return "pink"
+    @else
+        @return "gray"
+
+.btn
+    @apply inline-flex justify-center items-center px-4 py-2 font-semibold space-x-2 select-none
+
+.btn-icon
+    @apply flex w-5 h-5 items-center justify-center
+
+.btn-label-container
+    @apply flex items-center justify-center whitespace-nowrap
+
+@each $design in $designs
+    .btn-#{$design}
+        @apply transition
+        @if $design == "solid"
+        @else if $design == "light"
+        @else if $design == "text"
+        @else if $design == "bordered"
+            @apply border
+
+        /* Colors */
+        @each $color in $colors
+            &.btn-#{$color}
+                @if $design == "solid"
+                    @apply bg-#{activeColor($color)}-500 text-white hover:bg-#{activeColor($color)}-600 active:bg-#{activeColor($color)}-700
+                @else if $design == "light"
+                    @apply bg-#{activeColor($color)}-200 hover:bg-#{activeColor($color)}-300 active:bg-#{activeColor($color)}-100 text-slate-700
+                @else if $design == "text"
+                    @apply text-#{activeColor($color)}-700 hover:bg-#{activeColor($color)}-100 active:bg-#{activeColor($color)}-300
+                @else if $design == "bordered"
+                    @apply border-#{activeColor($color)}-500 bg-#{activeColor($color)}-500/5 text-#{activeColor($color)}-700 hover:bg-#{activeColor($color)}-200 active:bg-#{activeColor($color)}-300
+                .btn-loading
+                    @if $design == 'solid'
+                        @apply border-white
+                    @else
+                        @apply border-#{activeColor($color)}-500
+                    @apply border-[.2rem] border-t-transparent min-w-[1.25rem] min-h-[1.25rem] animate-spin rounded-full
